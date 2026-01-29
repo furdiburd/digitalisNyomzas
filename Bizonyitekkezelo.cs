@@ -8,7 +8,10 @@ namespace digitalisNyomzas
 {
 	internal class Bizonyitekkezelo
 	{
-		// a biznyítékok kezelésért felel.  - feladata: - bizonyíték hozzáadása - bizonyíték törlése -listázás
-		
+		// a bizonyítékok kezelésért felel.  - feladata: - bizonyíték hozzáadása - bizonyíték törlése -listázás
+		public Bizonyitekkezelo()
+		{
+			
+		}
 	}
 }

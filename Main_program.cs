@@ -22,8 +22,9 @@
                     case "4":
 
                     case "5":
-
-                    default:
+                        kilepes = true;
+                        break;
+					default:
                         Console.WriteLine("Érvénytelen választás, kérem próbálja újra.");
                         break;
                 }
