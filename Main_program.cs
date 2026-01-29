@@ -28,5 +28,13 @@
                 }
                 }
 			}
-    }
+        static void Menu()
+        {
+            Console.WriteLine("1. Bizonyitekkezelő");
+            Console.WriteLine("2. Ügykezelő");
+            Console.WriteLine("3. Döntéshozó");
+            Console.WriteLine("4. Adattár");
+            Console.WriteLine("5. Kilépés");
+		}
+	}
 }
