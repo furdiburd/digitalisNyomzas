@@ -13,8 +13,9 @@
                 switch (input)
                 {
                     case "1":
-
-                    case "2":
+                        Console.WriteLine("Első menüpont");
+                        break;
+					case "2":
 
                     case "3":
 
