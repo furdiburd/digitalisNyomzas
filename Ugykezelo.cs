@@ -56,8 +56,42 @@ namespace digitalisNyomzas
             Ugy ugy = _adattar.Ugyek.Find(u => u.UgyAzonosito == ugyAzonosito);
             if (ugy != null)
             {
+                if (ugy.Allapot == "lezárt")
+                {
+                    Console.WriteLine("Hiba: Lezárt ügyhöz nem adható bizonyíték!");
+                    return;
+                }
+
                 ugy.Bizonyitekok.Add(bizonyitek);
                 Console.WriteLine($"Bizonyíték ({bizonyitek.Azonosito}) hozzáadva az ügyhöz.");
+            }
+            else
+            {
+                Console.WriteLine("Hiba: Az ügy nem található!");
+            }
+        }
+
+        public void UgyAllapotModositas(string ugyAzonosito, string ujAllapot)
+        {
+            Ugy ugy = _adattar.Ugyek.Find(u => u.UgyAzonosito == ugyAzonosito);
+            if (ugy != null)
+            {
+                ugy.Allapot = ujAllapot;
+                Console.WriteLine($"Az ügy új állapota: {ujAllapot}");
+            }
+            else
+            {
+                Console.WriteLine("Hiba: Az ügy nem található!");
+            }
+        }
+
+        public void IdovonalEsemenyHozzaadasa(string ugyAzonosito, string leiras)
+        {
+            Ugy ugy = _adattar.Ugyek.Find(u => u.UgyAzonosito == ugyAzonosito);
+            if (ugy != null)
+            {
+                ugy.Idovonal.Add(new IdovonalEsemeny(DateTime.Now, leiras));
+                Console.WriteLine("Idővonal esemény hozzáadva.");
             }
             else
             {
