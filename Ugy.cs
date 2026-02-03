@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace digitalisNyomzas
 {
-	internal class Ugy
+	public class Ugy
 	{
-		public string Adattagok;
         public string UgyAzonosito { get; set; }
         public string Cim { get; set; }
         public string Leiras { get; set; }

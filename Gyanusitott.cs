@@ -24,3 +24,4 @@ namespace digitalisNyomzas
             return $"{Szemely.Nev} - Szint: {GyanusitottsagiSzint}% - Állapot: {Statusz}";
         }
     }
+}

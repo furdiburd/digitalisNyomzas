@@ -6,19 +6,7 @@ using System.Threading.Tasks;
 
 namespace digitalisNyomzas
 {
-	internal class Felhasznalo
-	{
-		private string adattagok;
-		private string nev;
-		private string azonosito;
-		private string szerepkor;
-
-		public string Adattagok { get => adattagok; set => adattagok = value; }
-		public string Nev { get => nev; set => nev = value; }
-		public string Azonosito { get => azonosito; set => azonosito = value; }
-		public string Szerepkor { get => szerepkor; set => szerepkor = value; }
-	}
-
+    // lehet nem kellett volna elfelejtenem kitörölni az órai vázlatot
     public class Felhasznalo
     {
         public string Nev { get; set; }
