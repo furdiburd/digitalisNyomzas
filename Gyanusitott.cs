@@ -6,19 +6,21 @@ using System.Threading.Tasks;
 
 namespace digitalisNyomzas
 {
-	internal class Gyanusitott
-	{
-		// "person objektum"
-		private int gyanusitottsagi_szint;
-		private string statusz;
+    public class Gyanusitott
+    {
+        public Szemely Szemely { get; set; }
+        public int GyanusitottsagiSzint { get; set; }
+        public string Statusz { get; set; }
 
-		public Gyanusitott(int gyanusitottsagi_szint, string statusz)
-		{
-			this.gyanusitottsagi_szint = gyanusitottsagi_szint;
-			this.statusz = statusz;
-		}
+        public Gyanusitott(Szemely szemely, int gyanusitottsagiSzint, string statusz)
+        {
+            Szemely = szemely;
+            GyanusitottsagiSzint = gyanusitottsagiSzint;
+            Statusz = statusz;
+        }
 
-		public int Gyanusitottsagi_szint { get => gyanusitottsagi_szint; set => gyanusitottsagi_szint = value; }
-		public string Statusz { get => statusz; set => statusz = value; }
-	}
-}
+        public override string ToString()
+        {
+            return $"{Szemely.Nev} - Szint: {GyanusitottsagiSzint}% - Állapot: {Statusz}";
+        }
+    }

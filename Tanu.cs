@@ -6,19 +6,22 @@ using System.Threading.Tasks;
 
 namespace digitalisNyomzas
 {
-	internal class Tanu
-	{
-		// "Person objektum"
-		private string vallomasSzovege;
-		private DateTime vallomasDatuma;
+    public class Tanu
+    {
+        public Szemely AlapAdatok { get; set; }
+        public string VallomasSzovege { get; set; }
+        public DateTime VallomasDatuma { get; set; }
 
-		public Tanu(string vallomasSzovege, DateTime vallomasDatuma)
-		{
-			this.vallomasSzovege = vallomasSzovege;
-			this.vallomasDatuma = vallomasDatuma;
-		}
+        public Tanu(Szemely alapAdatok, string vallomasSzovege, DateTime vallomasDatuma)
+        {
+            AlapAdatok = alapAdatok;
+            VallomasSzovege = vallomasSzovege;
+            VallomasDatuma = vallomasDatuma;
+        }
 
-		public string VallomasSzovege { get => vallomasSzovege; set => vallomasSzovege = value; }
-		public DateTime VallomasDatuma { get => vallomasDatuma; set => vallomasDatuma = value; }
-	}
+        public override string ToString()
+        {
+            return $"Tanú: {AlapAdatok.Nev} - Vallomás dátuma: {VallomasDatuma:yyyy.MM.dd}";
+        }
+    }
 }
