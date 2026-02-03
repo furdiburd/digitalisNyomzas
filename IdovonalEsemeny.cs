@@ -6,18 +6,20 @@ using System.Threading.Tasks;
 
 namespace digitalisNyomzas
 {
-	internal class IdovonalEsemeny
-	{
-		private DateTime esemenyDatum;
-		private string esemenyLeiras;
+    public class IdovonalEsemeny
+    {
+        public DateTime Datum { get; set; }
+        public string Leiras { get; set; }
 
-		public IdovonalEsemeny(DateTime esemenyDatum, string esemenyLeiras)
-		{
-			this.esemenyDatum = esemenyDatum;
-			this.esemenyLeiras = esemenyLeiras;
-		}
+        public IdovonalEsemeny(DateTime datum, string leiras)
+        {
+            Datum = datum;
+            Leiras = leiras;
+        }
 
-		public DateTime EsemenyDatum { get => esemenyDatum; set => esemenyDatum = value; }
-		public string EsemenyLeiras { get => esemenyLeiras; set => esemenyLeiras = value; }
-	}
+        public override string ToString()
+        {
+            return $"{Datum:yyyy.MM.dd HH:mm} - {Leiras}";
+        }
+    }
 }

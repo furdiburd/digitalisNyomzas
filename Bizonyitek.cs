@@ -6,24 +6,26 @@ using System.Threading.Tasks;
 
 namespace digitalisNyomzas
 {
-	internal class Bizonyitek
-	{
-		private string bizonyitek_azonosito;
-		private string tipus;
-		private string leiras;
-		private int megbizhatosagi_ertek;
+    public class Bizonyitek
+    {
+        public string Azonosito { get; set; }
+        public string Tipus { get; set; }
+        public string Leiras { get; set; }
+        public int MegbizhatosagiErtek { get; set; }
+        public double Suly { get; set; }
 
-		public Bizonyitek(string bizonyitek_azonosito, string tipus, string leiras, int megbizhatosagi_ertek)
-		{
-			this.bizonyitek_azonosito = bizonyitek_azonosito;
-			this.tipus = tipus;
-			this.leiras = leiras;
-			this.megbizhatosagi_ertek = megbizhatosagi_ertek;
-		}
+        public Bizonyitek(string azonosito, string tipus, string leiras, int megbizhatosagiErtek, double suly = 1.0)
+        {
+            Azonosito = azonosito;
+            Tipus = tipus;
+            Leiras = leiras;
+            MegbizhatosagiErtek = megbizhatosagiErtek;
+            Suly = suly;
+        }
 
-		public string Bizonyitek_azonosito { get => bizonyitek_azonosito; set => bizonyitek_azonosito = value; }
-		public string Tipus { get => tipus; set => tipus = value; }
-		public string Leiras { get => leiras; set => leiras = value; }
-		public int Megbizhatosagi_ertek { get => megbizhatosagi_ertek; set => megbizhatosagi_ertek = value; }
-	}
+        public override string ToString()
+        {
+            return $"[{Azonosito}] {Tipus}: {Leiras} (Megbízhatóság: {MegbizhatosagiErtek}/5, Súly: {Suly})";
+        }
+    }
 }
