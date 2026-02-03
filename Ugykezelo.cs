@@ -6,7 +6,63 @@ using System.Threading.Tasks;
 
 namespace digitalisNyomzas
 {
-	internal class Ugykezelo
-	{
-	}
+    public class Ugykezelo
+    {
+        private Adattar _adattar;
+
+        public Ugykezelo(Adattar adattar)
+        {
+            _adattar = adattar;
+        }
+
+        public void UjUgy(string azonosito, string cim, string leiras)
+        {
+            Ugy ujUgy = new Ugy(azonosito, cim, leiras);
+            _adattar.Ugyek.Add(ujUgy);
+            Console.WriteLine($"Ügy létrehozva: {cim}");
+        }
+
+        public void ListazUgyek()
+        {
+            if (_adattar.Ugyek.Count == 0)
+            {
+                Console.WriteLine("Nincsenek regisztrált ügyek.");
+                return;
+            }
+
+            Console.WriteLine("\n--- Ügyek listája ---");
+            foreach (var ugy in _adattar.Ugyek)
+            {
+                Console.WriteLine(ugy.ToString());
+            }
+        }
+
+        public void SzemelyHozzaadasa(string ugyAzonosito, Szemely szemely)
+        {
+            Ugy ugy = _adattar.Ugyek.Find(u => u.UgyAzonosito == ugyAzonosito);
+            if (ugy != null)
+            {
+                ugy.Szemelyek.Add(szemely);
+                Console.WriteLine($"{szemely.Nev} hozzáadva a(z) {ugy.Cim} ügyhöz.");
+            }
+            else
+            {
+                Console.WriteLine("Hiba: Az ügy nem található!");
+            }
+        }
+
+        public void BizonyitekHozzaadasa(string ugyAzonosito, Bizonyitek bizonyitek)
+        {
+            Ugy ugy = _adattar.Ugyek.Find(u => u.UgyAzonosito == ugyAzonosito);
+            if (ugy != null)
+            {
+                ugy.Bizonyitekok.Add(bizonyitek);
+                Console.WriteLine($"Bizonyíték ({bizonyitek.Azonosito}) hozzáadva az ügyhöz.");
+            }
+            else
+            {
+                Console.WriteLine("Hiba: Az ügy nem található!");
+            }
+        }
+    }
 }
