@@ -21,7 +21,7 @@ namespace digitalisNyomzas
 
             // ne legyen 100 fölött súlyozás után
             int ujSzint = (int)Math.Min(100, osszSulyozottErtek * 2.5);
-            gyanusitott.GyanusitottsagiSzint = ujSzint;
+			gyanusitott.GyanusitottsagiSzint = ujSzint;
 
             Console.WriteLine($"{gyanusitott.Szemely.Nev} új gyanúsítottsági szintje: {ujSzint}%");
 

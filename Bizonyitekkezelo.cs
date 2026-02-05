@@ -47,7 +47,7 @@ namespace digitalisNyomzas
             foreach (var b in _adattar.Bizonyitekok)
             {
                 Console.WriteLine(b.ToString());
-            }
+			}
         }
     }
 }

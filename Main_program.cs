@@ -108,9 +108,15 @@
 
             Console.Write("Név: ");
             string nev = Console.ReadLine();
-            Console.Write("Életkor: ");
-            int eletkor = int.Parse(Console.ReadLine());
-            Console.Write("Megjegyzés: ");
+
+			Console.Write("Életkor: ");
+			int eletkor;
+			while (!int.TryParse(Console.ReadLine(), out eletkor))
+			{
+				Console.WriteLine("Érvénytelen bemenet. Kérlek, add meg az életkort számként:");
+				Console.Write("Életkor: ");
+			}
+			Console.Write("Megjegyzés: ");
             string megjegyzes = Console.ReadLine();
 
             Szemely szemely = new Szemely(nev, eletkor, megjegyzes);
@@ -145,7 +151,7 @@
                     Bizonyitek bizonyitek = new Bizonyitek(azonosito, tipus, leiras, megbizhatosag, suly);
                     bizonyitekKezeleo.BizonyitekHozzaadas(bizonyitek);
                     ugykezelo.BizonyitekHozzaadasa(ugyAzonosito, bizonyitek);
-                    break;
+					break;
 
                 case "2":
                     bizonyitekKezeleo.Listazas();
@@ -212,10 +218,15 @@
 
             Console.Write("Gyanúsított neve: ");
             string nev = Console.ReadLine();
-            Console.Write("Életkor: ");
-            int eletkor = int.Parse(Console.ReadLine());
-            Console.Write("Megjegyzés: ");
-            string megjegyzes = Console.ReadLine();
+			Console.Write("Életkor: ");
+			int eletkor;
+			while (!int.TryParse(Console.ReadLine(), out eletkor))
+			{
+				Console.WriteLine("Érvénytelen bemenet. Kérlek, add meg az életkort számként:");
+				Console.Write("Életkor: ");
+			}
+			Console.Write("Megjegyzés: ");
+			string megjegyzes = Console.ReadLine();
 
             Szemely szemely = new Szemely(nev, eletkor, megjegyzes);
             Gyanusitott gyanusitott = new Gyanusitott(szemely, 0, "megfigyelt");
